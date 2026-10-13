@@ -1,0 +1,18 @@
+# Keep device images, installers, logs, and secrets outside this documentation repo.
+*.img
+*.zip
+*.apk
+*.exe
+*.dll
+*.ops
+*.bin
+*.tar
+*.md5
+*.log
+*.pcap
+*.pcapng
+.env
+.env.*
+.DS_Store
+__MACOSX/
+private/

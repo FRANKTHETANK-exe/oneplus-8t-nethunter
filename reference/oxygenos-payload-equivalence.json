@@ -1,0 +1,144 @@
+{
+  "archive_a": "OnePlus_8T_Global_OxygenOS_11.0.7.9.zip",
+  "archive_b": "Oneplus 8T/MSMkebab_15_O.12_210201.zip",
+  "method": "Compare member names, sizes, CRC32, compression method, encryption flags, and SHA256 of raw compressed streams. No payload decompression.",
+  "same_member_names": true,
+  "members": [
+    {
+      "path": "kebab_15_O.12_210201/",
+      "expanded_bytes": 0,
+      "compressed_sha256_a": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compressed_sha256_b": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/DLLS/",
+      "expanded_bytes": 0,
+      "compressed_sha256_a": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compressed_sha256_b": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/DLLS/libMESAPI.dll",
+      "expanded_bytes": 12792832,
+      "compressed_sha256_a": "23c268e8a60d52345f250ff540548084d4953c0b99a7f54aa331faaad0445295",
+      "compressed_sha256_b": "23c268e8a60d52345f250ff540548084d4953c0b99a7f54aa331faaad0445295",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/MsmDownloadTool V4.0.exe",
+      "expanded_bytes": 13504512,
+      "compressed_sha256_a": "6baf769bcb2f633ec7c7ce7e5420dd9d7ee1d37df3c79a49ef6bc8e83d5a7786",
+      "compressed_sha256_b": "6baf769bcb2f633ec7c7ce7e5420dd9d7ee1d37df3c79a49ef6bc8e83d5a7786",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/MsmDownloadTool V4.0_Win7.exe",
+      "expanded_bytes": 13479424,
+      "compressed_sha256_a": "05dd58a407e2569563b93b0336c257aff1c4ffcaa55120422de7d1d1eb791273",
+      "compressed_sha256_b": "05dd58a407e2569563b93b0336c257aff1c4ffcaa55120422de7d1d1eb791273",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/MsmDownloadTool V4.0_factory.exe",
+      "expanded_bytes": 13186048,
+      "compressed_sha256_a": "f01e9e5659db81e61ce5e38e173c6eaf8b2ca6ebd0d5b9a55a3c06461f45cc1a",
+      "compressed_sha256_b": "f01e9e5659db81e61ce5e38e173c6eaf8b2ca6ebd0d5b9a55a3c06461f45cc1a",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/UFS_FW/",
+      "expanded_bytes": 0,
+      "compressed_sha256_a": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compressed_sha256_b": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/UFS_FW/SELEN_UFS 3.1_V5_256Gb TLC_128GB_P13.bin",
+      "expanded_bytes": 516096,
+      "compressed_sha256_a": "476a117b50932b61e6228a0a4d8ae64e2c26ce7a917bc123bde34344411fba1a",
+      "compressed_sha256_b": "476a117b50932b61e6228a0a4d8ae64e2c26ce7a917bc123bde34344411fba1a",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/UFS_FW/SELEN_UFS 3.1_V5_256Gb TLC_256GB_P13.bin",
+      "expanded_bytes": 516096,
+      "compressed_sha256_a": "9a8961a608ecf1cd6026092d8da2c38186bebcb2f99e0a7e6e200dd1d8129288",
+      "compressed_sha256_b": "9a8961a608ecf1cd6026092d8da2c38186bebcb2f99e0a7e6e200dd1d8129288",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/UFS_FW/SELEN_UFS3.0_128GB_P09.bin",
+      "expanded_bytes": 491520,
+      "compressed_sha256_a": "df28e315397fe79f3e9bde24d9207bae556ee9ab31217a9dc495e3e38a6d5ff1",
+      "compressed_sha256_b": "df28e315397fe79f3e9bde24d9207bae556ee9ab31217a9dc495e3e38a6d5ff1",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/UFS_FW/SELEN_UFS3.0_256GB_P09.bin",
+      "expanded_bytes": 479232,
+      "compressed_sha256_a": "513031a891c1767866f178523f0e49c3be5814ce75fd21e4bd0695941e8382ba",
+      "compressed_sha256_b": "513031a891c1767866f178523f0e49c3be5814ce75fd21e4bd0695941e8382ba",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/build_path.txt",
+      "expanded_bytes": 83,
+      "compressed_sha256_a": "92ffb406bbf10b6e108506ba1d6b607aeaaa1734bffd3d60c7350035af9201a9",
+      "compressed_sha256_b": "92ffb406bbf10b6e108506ba1d6b607aeaaa1734bffd3d60c7350035af9201a9",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/kebab_15_O.12_210201.ops",
+      "expanded_bytes": 6309788160,
+      "compressed_sha256_a": "724ff1ea4ac828a3075be926b0826603e5a7612c40e425b82ea26a63aea257ff",
+      "compressed_sha256_b": "724ff1ea4ac828a3075be926b0826603e5a7612c40e425b82ea26a63aea257ff",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/md5sum_pack.md5",
+      "expanded_bytes": 58,
+      "compressed_sha256_a": "5e2ba774acc8f6dceae50b45a174fc11ecd548a2db5e8ca945edec629c156b7b",
+      "compressed_sha256_b": "5e2ba774acc8f6dceae50b45a174fc11ecd548a2db5e8ca945edec629c156b7b",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    },
+    {
+      "path": "kebab_15_O.12_210201/rev_OverSeas_210201_1801_release_OPBugReport_OTA-BLOCK_Signed_fp2102011801_cve2021-01-01_ufs_Oxygen-OS-11.0.7.9.KB05AA",
+      "expanded_bytes": 0,
+      "compressed_sha256_a": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compressed_sha256_b": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "same_compression_attributes": true,
+      "identical_compressed_stream": true,
+      "equivalent_member_payload": true
+    }
+  ],
+  "all_member_payloads_equivalent": true
+}
