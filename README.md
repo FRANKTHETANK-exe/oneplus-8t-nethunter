@@ -127,18 +127,28 @@ The manual's output was named `super-rw-sparse-fastboot-active-_b.img`. Use the 
 ./fastboot reboot recovery
 ```
 
-In recovery, perform **Factory reset → Format data**, then boot Android. Confirm root access and check RO2RW from a root Termux shell:
+In recovery, perform **Factory reset → Format data**, then boot Android. This removes user-installed apps and Magisk modules under `/data`; restore the tools before continuing:
+
+1. Complete Android setup, re-enable USB debugging, and copy back `Magisk-v27.0.apk`, the Termux APK, and `RO2RW-StableBeta.v3.7.2.1.zip` from the computer. Use the same versions in [DOWNLOADS.md](DOWNLOADS.md).
+2. Reinstall and open Magisk, complete any additional/environment setup, and reboot if prompted. Reinstall and open Termux to initialize its environment. Run `su -c id`, grant the Magisk request, and confirm `uid=0`. If root is unavailable, repeat [step 4](#4-install-magisk-270) before proceeding; installing the APK alone does not establish root.
+3. Reinstall the RO2RW ZIP through **Magisk → Modules → Install from storage**, then reboot. This restores the module and command; it does not repeat the super-image conversion.
+
+Open Termux and run:
 
 ```sh
 su
-ro2rw --check
+ro2rw
 ```
+
+Select **2 — Check free size** at the first menu to check the partitions. Version 3.7.2.1's launcher ignores the PDF's `--check` argument, so select the check option explicitly; do not select **Make/Install** just to verify the result.
 
 ## 6. Install NetHunter 2025.3
 
 Prepare `kali-nethunter-2025.3-oneplus8-oos-twelve-full.zip` as described in [Preparing the NetHunter ZIP](DOWNLOADS.md#preparing-the-nethunter-zip): remove its top-level `kernel-nethunter.zip` entry from a copy of the download. Leave the remaining archive contents intact.
 
-Install that prepared ZIP through **Magisk → Modules → Install from storage**. The manual allows about **25 minutes** for installation. Wait for completion, reboot, and open the NetHunter app and its Kali terminal.
+The manual pairs this `oos-twelve` image with crDroid 9.9 / Android 13 and NetErnel v1; compatibility of that exact combination is unconfirmed.
+
+Copy the prepared ZIP back to the phone and install it through **Magisk → Modules → Install from storage**. The manual allows about **25 minutes** for installation. Wait for completion, reboot, and open the NetHunter app and its Kali terminal.
 
 Run the commands from the manual in the Kali environment:
 
