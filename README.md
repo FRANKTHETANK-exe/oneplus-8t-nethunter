@@ -1,18 +1,20 @@
 # OnePlus 8T NetHunter
 
-Kali NetHunter on a **OnePlus 8T KB2005**, using **Android 13 / crDroid 9.9**, Magisk, RO2RW, and NetErnel with external USB Wi-Fi drivers. This guide follows the sequence in the [original four-page manual](reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf).
+Installation guide for Kali NetHunter on a **OnePlus 8T KB2005**, using **Android 13 / crDroid 9.9**, Magisk, RO2RW, and NetErnel with external USB Wi-Fi drivers.
 
-The [download guide](DOWNLOADS.md) has the exact versions, sources, and preparation instructions. Start there before connecting the phone.
+[PDF manual](reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf) · [Downloads and file preparation](DOWNLOADS.md)
+
+Download and prepare the version-specific files before connecting the phone.
 
 ## Before starting
 
 - A OnePlus 8T KB2005, a Windows PC for MSM Tool, and a reliable USB data cable.
 - A backup stored off the phone. Stock restore, bootloader unlock, and the RO2RW format step erase data.
-- Android Platform-Tools 36.0.0, with a terminal open in its `platform-tools` folder. The commands below use the manual's `./adb` and `./fastboot` syntax.
+- Android Platform-Tools 36.0.0, with a terminal open in its `platform-tools` folder.
 - USB debugging enabled whenever Android is running; accept the computer's authorization prompt. Enable OEM unlocking before the bootloader-unlock step.
 - The files in [DOWNLOADS.md](DOWNLOADS.md), with the ROM, Gapps, recovery, and vbmeta files copied into the terminal's working directory.
 
-Flashing the wrong model, partition image, or slot can leave the phone unable to boot. These instructions use the manual's versions and KB2005 setup; other models and newer releases need their own compatibility checks. Keep the stock recovery bundle available before proceeding.
+Flashing the wrong model, partition image, or slot can leave the phone unable to boot. This procedure targets the KB2005 and the versions listed below; check compatibility before using other models or releases. Keep the stock recovery bundle available before proceeding.
 
 ## 1. Restore stock Android 11 with MSM Tool
 
@@ -22,9 +24,9 @@ Use the **OxygenOS 11.0.7.9.KB05AA / `kebab_15_O.12_210201`** bundle from the do
 2. Power off the phone.
 3. Hold **Volume Up + Volume Down**, without holding Power, and connect the USB cable.
 4. Wait for the phone to appear under **ENUM**, then select **Start**.
-5. Let the restore finish. A black phone screen during this step is expected in the manual.
+5. Let the restore finish. The phone screen can remain black during the restore.
 
-Set up Android 11 and **do not install an OxygenOS update** before continuing. If MSM does not detect the phone, stop at this stage and check the cable and Windows device/driver detection; the manual does not specify a separate USB-driver package.
+Set up Android 11 and **do not install an OxygenOS update** before continuing. If MSM does not detect the phone, check the cable and Windows device/driver detection before continuing.
 
 ## 2. Unlock the bootloader
 
@@ -71,7 +73,7 @@ Return to the sideload option for Gapps:
 ./adb sideload NikGapps-core-arm64-13-20250716-signed.zip
 ```
 
-The manual notes that the computer-side progress can stop around 47%. Check the recovery's completion message before continuing; the percentage alone does not establish success. Reboot to Android and allow several minutes for the first boot.
+ADB progress on the computer may stop around 47%. Check the recovery's completion message before continuing; the percentage alone does not establish success. Reboot to Android and allow several minutes for the first boot.
 
 ## 4. Install Magisk 27.0
 
@@ -87,7 +89,7 @@ Select ADB sideload in recovery:
 ./adb sideload Magisk-v27.0.zip
 ```
 
-Reboot, install `Magisk-v27.0.apk`, complete Magisk's setup, and confirm root access. This is the manual's recovery method; [Magisk now marks recovery installation as deprecated](https://topjohnwu.github.io/Magisk/install.html#custom-recovery).
+Reboot, install `Magisk-v27.0.apk`, complete Magisk's setup, and confirm root access. [Recovery installation is deprecated in Magisk](https://topjohnwu.github.io/Magisk/install.html#custom-recovery).
 
 ## 5. Make the system writable with RO2RW
 
@@ -104,7 +106,7 @@ su
 ro2rw
 ```
 
-Use the selections recorded for **RO2RW 3.7.2.1**:
+Use these selections in **RO2RW 3.7.2.1**:
 
 | Prompt | Selection |
 | --- | --- |
@@ -119,7 +121,7 @@ Use the selections recorded for **RO2RW 3.7.2.1**:
 
 RO2RW generates a `super` image from the phone. With `/data` mounted, it writes to `/data/media/0/RO2RW_SUPER/` (the `RO2RW_SUPER` folder in internal storage); otherwise it falls back to a `RO2RW_SUPER` folder beside the script. Copy the generated image to the computer **before formatting data**.
 
-The manual's output was named `super-rw-sparse-fastboot-active-_b.img`. Use the output produced for the phone's actual active slot, not an image from another device. For the filename recorded in the manual:
+Use the image generated on this phone for its active slot. The commands below use `super-rw-sparse-fastboot-active-_b.img`; if the output is for slot `_a`, substitute that exact filename:
 
 ```sh
 ./adb reboot bootloader
@@ -140,17 +142,17 @@ su
 ro2rw
 ```
 
-Select **2 — Check free size** at the first menu to check the partitions. Version 3.7.2.1's launcher ignores the PDF's `--check` argument, so select the check option explicitly; do not select **Make/Install** just to verify the result.
+Select **2 — Check free size** at the first menu to check the partitions. In version 3.7.2.1, `--check` does not select check mode. Choose the menu option explicitly; **Make/Install** starts another conversion.
 
 ## 6. Install NetHunter 2025.3
 
 Prepare `kali-nethunter-2025.3-oneplus8-oos-twelve-full.zip` as described in [Preparing the NetHunter ZIP](DOWNLOADS.md#preparing-the-nethunter-zip): remove its top-level `kernel-nethunter.zip` entry from a copy of the download. Leave the remaining archive contents intact.
 
-The manual pairs this `oos-twelve` image with crDroid 9.9 / Android 13 and NetErnel v1; compatibility of that exact combination is unconfirmed.
+This configuration combines the `oos-twelve` image with crDroid 9.9 / Android 13 and NetErnel v1. Compatibility of this exact combination is unconfirmed.
 
-Copy the prepared ZIP back to the phone and install it through **Magisk → Modules → Install from storage**. The manual allows about **25 minutes** for installation. Wait for completion, reboot, and open the NetHunter app and its Kali terminal.
+Copy the prepared ZIP back to the phone and install it through **Magisk → Modules → Install from storage**. Allow about **25 minutes** for installation. Wait for completion, reboot, and open the NetHunter app and its Kali terminal.
 
-Run the commands from the manual in the Kali environment:
+In the Kali terminal, run:
 
 ```sh
 echo 'APT::Sandbox::User "root";' | sudo tee /etc/apt/apt.conf.d/01-android-nosandbox
@@ -190,11 +192,11 @@ insmod /system/lib/modules/rtl_drivers/8814au.ko
 
 Save it, enable **On Boot**, and reboot. The same commands are in [`scripts/external_wifi_driver_load.sh`](scripts/external_wifi_driver_load.sh).
 
-The manual reports working external Wi-Fi after this step. It does not name the adapter model or include driver-loading logs, so support for a particular adapter still depends on its chipset and the installed kernel/modules. Use NetHunter only on devices and networks where testing is authorized.
+External Wi-Fi requires an adapter chipset supported by the installed modules and kernel. Use NetHunter only on devices and networks where testing is authorized.
 
-## Final vbmeta step from the manual
+## Final vbmeta step
 
-The manual ends by repeating the vbmeta flash as a stability fix. From bootloader mode, with the same crDroid images:
+From bootloader mode, reapply the verification flags with the same crDroid images:
 
 ```sh
 ./fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
@@ -202,11 +204,11 @@ The manual ends by repeating the vbmeta flash as a stability fix. From bootloade
 ./fastboot reboot
 ```
 
-This disables verified-boot checks. It is not a general guarantee against boot problems, and vbmeta changes can require a data wipe; back up before repeating them.
+This disables verified-boot checks and reduces boot integrity protection. Vbmeta changes can require a data wipe; back up before repeating them.
 
 ## Files
 
 - [`DOWNLOADS.md`](DOWNLOADS.md): version-specific downloads, image extraction, and ZIP preparation.
-- [`reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf`](reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf): original manual.
-- [`scripts/external_wifi_driver_load.sh`](scripts/external_wifi_driver_load.sh): the five driver commands from the manual.
+- [`reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf`](reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf): PDF installation manual.
+- [`scripts/external_wifi_driver_load.sh`](scripts/external_wifi_driver_load.sh): Wi-Fi module-loading commands.
 - [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): project credits and bundled license notices.

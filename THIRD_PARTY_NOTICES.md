@@ -1,6 +1,6 @@
 # Credits and licenses
 
-The installation guide follows the project author's [original manual](reference/OnePlus8T_NetHunter_Instruction_Manual_Final.pdf). Download and file-preparation details are in [DOWNLOADS.md](DOWNLOADS.md).
+Upstream software used by this project:
 
 - **NetHunter:** Kali NetHunter Team.
 - **NetErnel v1:** Ygrek178, based on Meteoric V10 by HELLBOY017.
@@ -10,7 +10,7 @@ The installation guide follows the project author's [original manual](reference/
 - **OnePlus firmware / MSM Tool and Google Platform-Tools:** their respective owners; linked from their distribution sources.
 - **payload-dumper-go:** ssut and contributors, Apache-2.0; linked as an image-extraction tool.
 
-These two notices are included unchanged from the accompanying installers:
+Included license notices:
 
 - [NetErnel AnyKernel/tooling notice](notices/NetErnel-AnyKernel-LICENSE.txt), from `NetErnel_v1_opkona.zip` → `LICENSE`.
 - [NetHunter AnyKernel/tooling notice](notices/NetHunter-AnyKernel-LICENSE.txt), from the NetHunter ZIP → `boot-patcher/LICENSE-AnyKernel`.
